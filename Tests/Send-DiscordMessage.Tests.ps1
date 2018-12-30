@@ -9,6 +9,10 @@ Describe 'Send-TeamsMessage - Should send messages properly' {
 
         Send-DiscordMessage -WebHookUrl $DiscordUrl -Content 'My pester tests - Starting up' -AvatarName 'Pester Tester' -AvatarUrl "https://raw.githubusercontent.com/EvotecIT/PSTeams/master/Links/Asset%20130.png"
     }
+    It 'Given - url, content and avatar name with url and Text To Speech - Should send message properly' {
+
+        Send-DiscordMessage -WebHookUrl $DiscordUrl -Content 'My pester tests - Starting up' -TextToSpeech -AvatarName 'Pester Tester' -AvatarUrl "https://raw.githubusercontent.com/EvotecIT/PSTeams/master/Links/Asset%20130.png"
+    }
     It 'Given - Author, Fact, Thumbnail, Section, Color - Should send message properly' {
 
         $Author = New-DiscordAuthor -Name 'Pester Tester' -IconUrl "https://raw.githubusercontent.com/EvotecIT/PSTeams/master/Links/Asset%20130.png"
@@ -20,7 +24,7 @@ Describe 'Send-TeamsMessage - Should send messages properly' {
         $Thumbnail = New-DiscordThumbnail -Url "https://raw.githubusercontent.com/EvotecIT/PSTeams/master/Links/Asset%20130.png"
 
         $Section = New-DiscordSection -Title 'Everybody panic!' -Description '' -Facts $Fact1, $Fact2, $Fact3, $Fact4 -Color BlueViolet -Author $Author -Thumbnail $Thumbnail
-        Send-DiscordMessage -WebHookUrl $DiscordUrl -Sections $Section -AvatarName 'PSBlackListChecker' -AvatarUrl "https://raw.githubusercontent.com/EvotecIT/PSTeams/master/Links/Asset%20130.png" -Verbose
+        Send-DiscordMessage -WebHookUrl $DiscordUrl -Sections $Section -AvatarName 'Pester Tester' -AvatarUrl "https://raw.githubusercontent.com/EvotecIT/PSTeams/master/Links/Asset%20130.png" -Verbose
     }
     It 'Given - Author, 3 facts, 1 image, 1 section, Avatar Name and URL - Should send message properly' {
 
@@ -35,7 +39,7 @@ Describe 'Send-TeamsMessage - Should send messages properly' {
         $Section = New-DiscordSection -Title 'Everybody panic!' -Description '' -Facts $Fact1, $Fact2, $Fact3,$Fact4 -Color BlueViolet -Author $Author -Image $Image
         Send-DiscordMessage -WebHookUrl $DiscordUrl `
             -Sections $Section `
-            -AvatarName 'PSBlackListChecker' `
+            -AvatarName 'Pester Tester' `
             -AvatarUrl "https://raw.githubusercontent.com/EvotecIT/PSTeams/master/Links/Asset%20130.png"
 
     }
