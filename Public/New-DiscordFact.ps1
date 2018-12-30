@@ -6,10 +6,13 @@ function New-DiscordFact {
         [string] $Value,
         [bool] $Inline
     )
-    $Fact = [ordered] @{
-        name  = "$Name"
-        value = "$Value"
-        inline = $inline
+
+    If ($Name -ne '' -and $Value -ne '') {
+        $Fact = [ordered] @{
+            name   = $Name
+            value  = $Value
+            inline = $inline
+        }
+        return $Fact
     }
-    return $Fact
 }
