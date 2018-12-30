@@ -12,10 +12,10 @@
 RootModule = 'PSDiscord.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.0.3'
+ModuleVersion = '0.0.5'
 
 # Supported PSEditions
-# CompatiblePSEditions = @()
+CompatiblePSEditions = 'Desktop', 'Core'
 
 # ID used to uniquely identify this module
 GUID = 'd5ae39b1-56a4-4f43-b251-e402b0c3c485'
@@ -33,7 +33,7 @@ Copyright = '(c) 2011 - 2019 Przemyslaw Klys. All rights reserved.'
 Description = 'Simple module to send messages to Discord'
 
 # Minimum version of the Windows PowerShell engine required by this module
-# PowerShellVersion = ''
+PowerShellVersion = '5.1'
 
 # Name of the Windows PowerShell host required by this module
 # PowerShellHostName = ''
