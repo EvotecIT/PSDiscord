@@ -6,7 +6,7 @@ function New-DiscordSection {
         [string] $Description,
         [alias('Fields')][System.Collections.IDictionary[]] $Facts,
         [RGBColors] $Color,
-        $Author,
+        [System.Collections.IDictionary] $Author,
         [System.Collections.IDictionary] $Thumbnail,
         [System.Collections.IDictionary] $Image
     )

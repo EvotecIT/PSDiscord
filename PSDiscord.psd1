@@ -18,7 +18,7 @@ ModuleVersion = '0.0.1'
 # CompatiblePSEditions = @()
 
 # ID used to uniquely identify this module
-GUID = '0d73a512-23b3-423f-a0cf-4c0b12cdc1e4'
+GUID = 'd5ae39b1-56a4-4f43-b251-e402b0c3c485'
 
 # Author of this module
 Author = 'Przemyslaw Klys'
@@ -69,8 +69,8 @@ ScriptsToProcess = 'Enums\RGBColors.ps1'
 # NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = 'New-DiscordAuthor', 'New-DiscordFact', 'New-DiscordImage', 
-               'New-DiscordMessage', 'New-DiscordSection', 'Send-DiscordMessage'
+FunctionsToExport = 'Initialize-DiscordConfig', 'New-DiscordAuthor', 'New-DiscordFact', 
+               'New-DiscordImage', 'New-DiscordSection', 'Send-DiscordMessage'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = @()
@@ -96,7 +96,7 @@ PrivateData = @{
     PSData = @{
 
         # Tags applied to this module. These help with module discovery in online galleries.
-        Tags = 'Discord'
+        Tags = 'Discord', 'Messaging', 'Communication', 'Social'
 
         # A URL to the license for this module.
         # LicenseUri = ''
