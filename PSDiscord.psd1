@@ -12,7 +12,7 @@
 RootModule = 'PSDiscord.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.0.1'
+ModuleVersion = '0.0.3'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -69,8 +69,8 @@ ScriptsToProcess = 'Enums\RGBColors.ps1'
 # NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = 'Initialize-DiscordConfig', 'New-DiscordAuthor', 'New-DiscordFact', 
-               'New-DiscordImage', 'New-DiscordSection', 'Send-DiscordMessage'
+FunctionsToExport = 'New-DiscordAuthor', 'New-DiscordFact', 'New-DiscordImage', 
+               'New-DiscordSection', 'Send-DiscordMessage'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = @()
@@ -105,7 +105,7 @@ PrivateData = @{
         ProjectUri = 'https://github.com/EvotecIT/PSDiscord'
 
         # A URL to an icon representing this module.
-        # IconUri = ''
+        IconUri = 'https://evotec.xyz/wp-content/uploads/2018/12/Discord-Logo-Color.png'
 
         # ReleaseNotes of this module
         # ReleaseNotes = ''
