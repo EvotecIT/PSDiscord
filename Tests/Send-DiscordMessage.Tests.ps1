@@ -11,7 +11,7 @@ Describe 'Send-TeamsMessage - Should send messages properly' {
     }
     It 'Given - url, content and avatar name with url and Text To Speech - Should send message properly' {
 
-        Send-DiscordMessage -WebHookUrl $DiscordUrl -Content 'My pester tests - Starting up' -TextToSpeech -AvatarName 'Pester Tester' -AvatarUrl "https://raw.githubusercontent.com/EvotecIT/PSTeams/master/Links/Asset%20130.png"
+        Send-DiscordMessage -WebHookUrl $DiscordUrl -Content 'Testing Text to Speech option' -TextToSpeech -AvatarName 'Pester Tester' -AvatarUrl "https://raw.githubusercontent.com/EvotecIT/PSTeams/master/Links/Asset%20130.png"
     }
     It 'Given - Author, Fact, Thumbnail, Section, Color - Should send message properly' {
 
