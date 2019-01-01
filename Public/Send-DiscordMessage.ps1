@@ -44,5 +44,5 @@ function Send-DiscordMessage {
 
     $Body = ConvertTo-Json -Depth 6 -InputObject $FullMessage
     Write-Verbose -Message "Send-DiscordMessage - Body: `n$Body"
-    Invoke-RestMethod -Uri $WebHookUrl -Body $Body -Method Post -ContentType "application/json"
+    Invoke-RestMethod -Uri $WebHookUrl -Body $Body -Method Post -ContentType "application/json" -Verbose:$false
 }
