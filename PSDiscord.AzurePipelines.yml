@@ -7,9 +7,6 @@ jobs:
                 Install-Module -Name Pester -Repository PSGallery -Force -SkipPublisherCheck
                 .\PSDiscord.Tests.ps1 $(DiscordURL)
             displayName: "Run Pester Tests -PowerShell 5"
-          - script: |
-                pwsh -c '.\PSBlackListChecker.Tests.ps1' $(DiscordURL)
-            displayName: "Run Pester Tests - PowerShell 6"
 
     - job: Build_PSCore_Ubuntu1604
 
