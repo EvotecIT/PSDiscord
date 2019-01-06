@@ -1,9 +1,9 @@
 function Send-DiscordMessage {
-    [CmdletBinding()]
+    [CmdletBinding(SupportsShouldProcess)]
     param (
         [alias('Url', 'Uri')][Uri] $WebHookUrl,
         [alias('Embeds', 'Embed', 'Section')][System.Collections.IDictionary[]] $Sections,
-        [alias('Content','Message')][string] $Text,
+        [alias('Content', 'Message')][string] $Text,
         [alias('Username')] [string] $AvatarName,
         [Uri] $AvatarUrl,
         [alias('TTS')][switch] $TextToSpeech,
@@ -44,5 +44,7 @@ function Send-DiscordMessage {
 
     $Body = ConvertTo-Json -Depth 6 -InputObject $FullMessage
     Write-Verbose -Message "Send-DiscordMessage - Body: `n$Body"
-    Invoke-RestMethod -Uri $WebHookUrl -Body $Body -Method Post -ContentType "application/json" -Verbose:$false
+    if ($PSCmdlet.ShouldProcess("$([System.Environment]::NewLine)$Body",'Invoke-RestMethod')) {
+        Invoke-RestMethod -Uri $WebHookUrl -Body $Body -Method Post -ContentType "application/json" -Verbose:$false
+    }
 }
