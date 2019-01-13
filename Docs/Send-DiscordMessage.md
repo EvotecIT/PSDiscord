@@ -15,7 +15,7 @@ schema: 2.0.0
 ```
 Send-DiscordMessage [[-WebHookUrl] <Uri>] [[-Sections] <IDictionary[]>] [[-Text] <String>]
  [[-AvatarName] <String>] [[-AvatarUrl] <Uri>] [-TextToSpeech] [-CreateConfig] [[-ConfigName] <String>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-OutputJSON] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -94,6 +94,21 @@ Accept wildcard characters: False
 
 ### -CreateConfig
 {{Fill CreateConfig Description}}
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -OutputJSON
+{{Fill OutputJSON Description}}
 
 ```yaml
 Type: SwitchParameter

@@ -8,7 +8,8 @@ function Send-DiscordMessage {
         [Uri] $AvatarUrl,
         [alias('TTS')][switch] $TextToSpeech,
         [switch] $CreateConfig,
-        [string] $ConfigName
+        [string] $ConfigName,
+        [switch] $OutputJSON
     )
     if (-not $WebHookUrl) {
         $WebHookUrl = Get-DiscordConfig -Name 'Primary'
@@ -46,5 +47,8 @@ function Send-DiscordMessage {
     Write-Verbose -Message "Send-DiscordMessage - Body: `n$Body"
     if ($PSCmdlet.ShouldProcess("$([System.Environment]::NewLine)$Body",'Invoke-RestMethod')) {
         Invoke-RestMethod -Uri $WebHookUrl -Body $Body -Method Post -ContentType "application/json" -Verbose:$false
+    }
+    if ($OutputJSON) {
+        return $Body
     }
 }
