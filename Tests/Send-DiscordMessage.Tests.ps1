@@ -36,11 +36,21 @@ Describe 'Send-TeamsMessage - Should send messages properly' {
 
         $Image = New-DiscordImage -Url "https://raw.githubusercontent.com/EvotecIT/PSTeams/master/Links/Asset%20130.png"
 
-        $Section = New-DiscordSection -Title 'Everybody panic!' -Description '' -Facts $Fact1, $Fact2, $Fact3,$Fact4 -Color BlueViolet -Author $Author -Image $Image
+        $Section = New-DiscordSection -Title 'Everybody panic!' -Description '' -Facts $Fact1, $Fact2, $Fact3, $Fact4 -Color BlueViolet -Author $Author -Image $Image
         Send-DiscordMessage -WebHookUrl $DiscordUrl `
             -Sections $Section `
             -AvatarName 'Pester Tester' `
             -AvatarUrl "https://raw.githubusercontent.com/EvotecIT/PSTeams/master/Links/Asset%20130.png"
 
+    }
+    It 'Given - Just 1 Author, 1 Fact, 1 Thumbnail, 1 Section, 1 Color - Should send message properly' {
+
+        $Author = New-DiscordAuthor -Name 'Pester Tester' -IconUrl "https://raw.githubusercontent.com/EvotecIT/PSTeams/master/Links/Asset%20130.png"
+        $Fact1 = New-DiscordFact -Name '**PS Version**' -Value "$($PSVersionTable.PSVersion)" -Inline $true
+
+        $Thumbnail = New-DiscordThumbnail -Url "https://raw.githubusercontent.com/EvotecIT/PSTeams/master/Links/Asset%20130.png"
+
+        $Section = New-DiscordSection -Title 'Everybody panic!' -Description '' -Facts $Fact1 -Color BlueViolet -Author $Author -Thumbnail $Thumbnail
+        Send-DiscordMessage -WebHookUrl $DiscordUrl -Sections $Section -AvatarName 'Pester Tester' -AvatarUrl "https://raw.githubusercontent.com/EvotecIT/PSTeams/master/Links/Asset%20130.png" -Verbose
     }
 }
