@@ -23,7 +23,9 @@ function Send-DiscordMessage {
         }
         Initialize-DiscordConfig -ConfigName $ConfigName -URI $WebHookUrl
     }
-    $FullMessage = New-DiscordMessage
+    $FullMessage = [ordered] @{
+        "embeds" = @()
+    }
     if ($null -ne $Sections) {
         foreach ($Section in $Sections) {
             $FullMessage.embeds += $Section
@@ -45,7 +47,7 @@ function Send-DiscordMessage {
 
     $Body = ConvertTo-Json -Depth 6 -InputObject $FullMessage
     Write-Verbose -Message "Send-DiscordMessage - Body: `n$Body"
-    if ($PSCmdlet.ShouldProcess("$([System.Environment]::NewLine)$Body",'Invoke-RestMethod')) {
+    if ($PSCmdlet.ShouldProcess("$([System.Environment]::NewLine)$Body", 'Invoke-RestMethod')) {
         Invoke-RestMethod -Uri $WebHookUrl -Body $Body -Method Post -ContentType "application/json" -Verbose:$false
     }
     if ($OutputJSON) {

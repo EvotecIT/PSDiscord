@@ -15,11 +15,12 @@ function New-DiscordSection {
         description = $Description
         fields      = @()
     }
-    $Section.fields = foreach ($Fact in $Facts) {
+    $Field = foreach ($Fact in $Facts) {
         if ($null -ne $Fact) {
             $Fact
         }
     }
+    $Section.fields = @($Field)
     if ($null -ne $Color) {
         $Section.color = ConvertFrom-Color -Color $Color -AsDecimal
     }

@@ -1,4 +1,5 @@
 function Get-DiscordConfig {
+    [CmdletBinding()]
     param(
         [string] $Name = 'Primary'
     )

@@ -1,4 +1,5 @@
 function Initialize-DiscordConfig {
+    [CmdletBinding()]
     param(
         [string] $Name = 'Primary',
         [Uri] $URI
