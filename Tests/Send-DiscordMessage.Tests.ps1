@@ -4,7 +4,7 @@ param (
 #Requires -Modules Pester
 Import-Module $PSScriptRoot\..\PSDiscord.psd1 -Force #-Verbose
 
-Describe 'Send-TeamsMessage - Should send messages properly' {
+Describe 'Send-DiscordMessage - Should send messages properly' {
     It 'Given - url, content and avatar name with url - Should send message properly' {
 
         Send-DiscordMessage -WebHookUrl $DiscordUrl -Content 'My pester tests - Starting up' -AvatarName 'Pester Tester' -AvatarUrl "https://raw.githubusercontent.com/EvotecIT/PSTeams/master/Links/Asset%20130.png"
@@ -52,5 +52,16 @@ Describe 'Send-TeamsMessage - Should send messages properly' {
 
         $Section = New-DiscordSection -Title 'Everybody panic!' -Description '' -Facts $Fact1 -Color BlueViolet -Author $Author -Thumbnail $Thumbnail
         Send-DiscordMessage -WebHookUrl $DiscordUrl -Sections $Section -AvatarName 'Pester Tester' -AvatarUrl "https://raw.githubusercontent.com/EvotecIT/PSTeams/master/Links/Asset%20130.png" -Verbose
+    }
+}
+Describe 'Send-DiscordMessage - Invoke-RestMethod Test' {
+    It 'Given basic data, things should be delivered to Discord' {
+        # Discord message/notification configuration
+        $Uri = $Env:DiscordUrl
+        $Author = New-DiscordAuthor -Name 'Name' -IconUrl "https://raw.githubusercontent.com/EvotecIT/PSTeams/master/Links/Asset%20130.png"
+        $Fact = New-DiscordFact -Name 'Test' -Value 'message' -Inline $false
+        $Thumbnail = New-DiscordThumbnail -Url "https://raw.githubusercontent.com/EvotecIT/PSTeams/master/Links/Asset%20130.png"
+        $Section = New-DiscordSection -Title 'message' -Description '' -Facts $Fact -Color Red -Author $Author -Thumbnail $Thumbnail -Image $Thumbnail
+        Send-DiscordMessage -WebHookUrl $Uri -Sections $Section -AvatarName 'NoPixelChecker' -AvatarUrl "https://raw.githubusercontent.com/EvotecIT/PSTeams/master/Links/Asset%20130.png"
     }
 }
