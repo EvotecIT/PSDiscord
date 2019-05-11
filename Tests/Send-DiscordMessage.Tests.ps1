@@ -57,7 +57,7 @@ Describe 'Send-DiscordMessage - Should send messages properly' {
 Describe 'Send-DiscordMessage - Invoke-RestMethod Test' {
     It 'Given basic data, things should be delivered to Discord' {
         # Discord message/notification configuration
-        $Uri = $Env:DiscordUrl
+        $Uri = $DiscordUrl
         $Author = New-DiscordAuthor -Name 'Name' -IconUrl "https://raw.githubusercontent.com/EvotecIT/PSTeams/master/Links/Asset%20130.png"
         $Fact = New-DiscordFact -Name 'Test' -Value 'message' -Inline $false
         $Thumbnail = New-DiscordThumbnail -Url "https://raw.githubusercontent.com/EvotecIT/PSTeams/master/Links/Asset%20130.png"
