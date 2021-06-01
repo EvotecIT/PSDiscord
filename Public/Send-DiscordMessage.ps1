@@ -48,7 +48,7 @@ function Send-DiscordMessage {
     $Body = ConvertTo-Json -Depth 6 -InputObject $FullMessage
     Write-Verbose -Message "Send-DiscordMessage - Body: `n$Body"
     if ($PSCmdlet.ShouldProcess("$([System.Environment]::NewLine)$Body", 'Invoke-RestMethod')) {
-        Invoke-RestMethod -Uri $WebHookUrl -Body $Body -Method Post -ContentType "application/json" -Verbose:$false
+        Invoke-RestMethod -Uri $WebHookUrl -Body $Body -Method Post -ContentType 'application/json; charset=UTF-8' -Verbose:$false
     }
     if ($OutputJSON) {
         return $Body
