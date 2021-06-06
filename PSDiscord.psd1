@@ -8,7 +8,7 @@
     Description          = 'Simple module to send messages to Discord'
     FunctionsToExport    = @('New-DiscordAuthor', 'New-DiscordFact', 'New-DiscordImage', 'New-DiscordSection', 'Send-DiscordMessage')
     GUID                 = 'd5ae39b1-56a4-4f43-b251-e402b0c3c485'
-    ModuleVersion        = '0.2.3'
+    ModuleVersion        = '0.2.4'
     PowerShellVersion    = '5.1'
     PrivateData          = @{
         PSData = @{
@@ -18,7 +18,7 @@
         }
     }
     RequiredModules      = @(@{
-            ModuleVersion = '0.0.201'
+            ModuleVersion = '0.0.205'
             ModuleName    = 'PSSharedGoods'
             Guid          = 'ee272aa8-baaa-4edf-9f45-b6d6f7d844fe'
         })
