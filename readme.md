@@ -26,6 +26,8 @@ For description and **advanced** usage visit [PSDiscord](https://evotec.xyz/hub/
 
 ## Updates
 
+- 0.2.4 / 2021.06.06
+  - Replaced [RGBColors] with [string] and defined 800+ colors in New-DiscordSection
 - 0.2.3 / 2021.06.01
   - Supports UTF8 chars/emoji
 - 0.0.6 / 2019.01.01
