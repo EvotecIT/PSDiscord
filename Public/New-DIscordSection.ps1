@@ -5,7 +5,7 @@ function New-DiscordSection {
         [string] $Title,
         [string] $Description,
         [alias('Fields')][System.Collections.IDictionary[]] $Facts,
-        [RGBColors] $Color,
+        [string] $Color,
         [System.Collections.IDictionary] $Author,
         [System.Collections.IDictionary] $Thumbnail,
         [System.Collections.IDictionary] $Image
@@ -35,3 +35,4 @@ function New-DiscordSection {
     }
     return $Section
 }
+Register-ArgumentCompleter -CommandName New-DiscordSection -ParameterName Color -ScriptBlock $Script:ScriptBlockColors
