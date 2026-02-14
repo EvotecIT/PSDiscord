@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://dev.azure.com/evotecpl/PSDiscord/_build/latest?definitionId=3"><img src="https://dev.azure.com/evotecpl/PSDiscord/_apis/build/status/EvotecIT.PSDiscord"></a>
   <a href="https://www.powershellgallery.com/packages/PSDiscord"><img src="https://img.shields.io/powershellgallery/v/PSDiscord.svg"></a>
-  <a href="https://www.powershellgallery.com/packages/PSDiscord"><img src="https://img.shields.io/powershellgallery/vpre/PSDiscord.svg?label=powershell%20gallery%20preview&colorB=yellow"></a>
+  <a href="https://www.powershellgallery.com/packages/PSDiscord"><img src="https://img.shields.io/powershellgallery/v/PSDiscord.svg?label=powershell%20gallery%20preview&colorB=yellow&include_prereleases"></a>
   <a href="https://github.com/EvotecIT/PSDiscord"><img src="https://img.shields.io/github/license/EvotecIT/PSDiscord.svg"></a>
 </p>
 
